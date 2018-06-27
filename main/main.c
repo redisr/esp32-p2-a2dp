@@ -17,8 +17,17 @@
 #include "esp_log.h"
 
 #include "bt_controller.h"
+#include "nvs_controller.h"
 
 void app_main()
 {
-    bt_a2dp_init();
+    // const char *device = "AWS-810\0";
+    // write_device_name(device);
+    // clear_device_name();
+    char *test = read_device_name();
+    if (test == NULL) {
+        printf ("No config found\n");
+    }
+
+    //bt_a2dp_init();
 }
